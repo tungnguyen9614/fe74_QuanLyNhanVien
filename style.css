@@ -1,0 +1,29 @@
+#form-qlnv .title{
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.form-body {
+    padding: 10px;
+}
+
+.button-add,.button-update {
+    padding: 10px;
+    background: #80808024;
+}
+
+#addNV {
+    color: green;
+    border: 1px solid green;
+}
+
+/* #updateNV{
+    color: blue;
+    border: 1px solid blue;
+} */
+
+.sp-thongbao {
+    color: red;
+}
