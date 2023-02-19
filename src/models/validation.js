@@ -40,7 +40,7 @@ function Validation(){
     }
 
     this.kiemTraChuoiKyTu = function(value,spanID,mess){
-        var letter = /^[a-zA-Z]+ [a-zA-Z]+$/;
+        var letter = /^[a-zA-ZÀ-ÿ ]+$/;
         if(value.match(letter)){
             hideMess(spanID);
             return true;

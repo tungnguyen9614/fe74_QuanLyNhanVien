@@ -9,6 +9,7 @@ function resetForm() {
   getEle("formNV").reset();
 }
 
+
 function getListData() {
   callApi
     .fetchListData()
@@ -26,10 +27,13 @@ function renderData(data) {
   var contentHTML = "";
   data.forEach(function (nv, i) {
     var xepLoai = "";
-    if (nv.soGioLamTrongThang >= 50 && nv.soGioLamTrongThang < 90) {
+    if (nv.soGioLamTrongThang >= 50 && nv.soGioLamTrongThang < 70) {
+        xepLoai = "Trung bình";
+      }
+    if (nv.soGioLamTrongThang >= 70 && nv.soGioLamTrongThang < 100) {
       xepLoai = "Khá";
     }
-    if (nv.soGioLamTrongThang >= 90 && nv.soGioLamTrongThang < 130) {
+    if (nv.soGioLamTrongThang >= 100 && nv.soGioLamTrongThang < 130) {
       xepLoai = "Giỏi";
     }
     if (nv.soGioLamTrongThang >= 130 && nv.soGioLamTrongThang <= 150) {
@@ -127,12 +131,14 @@ getEle("addNV").addEventListener("click", function () {
     .addNV(nv)
     .then(function () {
       getListData();
+      alert("Thêm Nhân viên thành công");
+      resetForm();
     })
     .catch(function (error) {
       console.log(error);
     });
 
-  resetForm();
+  
 });
 
 /**
@@ -236,6 +242,7 @@ function handleUpdate(id) {
     .updateNV(nv, id)
     .then(function () {
       getListData();
+      alert("Cập nhật Nhân viên thành công");
       getEle("addNV").style.display = "block";
       getEle("btnUpdate").style.display = "none";
     })
@@ -244,4 +251,5 @@ function handleUpdate(id) {
     });
 
   resetForm();
+  getEle("maNV").disabled = false;
 }
