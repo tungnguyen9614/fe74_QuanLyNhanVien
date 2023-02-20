@@ -126,12 +126,11 @@ function getInfoNV() {
  */
 getEle("addNV").addEventListener("click", function () {
   var nv = getInfoNV();
-  // console.log(nv);
   callApi
     .addNV(nv)
     .then(function () {
       getListData();
-      alert("Thêm Nhân viên thành công");
+      alert("Thêm thành công");
       resetForm();
     })
     .catch(function (error) {
@@ -242,7 +241,7 @@ function handleUpdate(id) {
     .updateNV(nv, id)
     .then(function () {
       getListData();
-      alert("Cập nhật Nhân viên thành công");
+      alert("Cập nhật thành công");
       getEle("addNV").style.display = "block";
       getEle("btnUpdate").style.display = "none";
     })

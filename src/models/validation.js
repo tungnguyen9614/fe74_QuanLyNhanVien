@@ -40,7 +40,7 @@ function Validation(){
     }
 
     this.kiemTraChuoiKyTu = function(value,spanID,mess){
-        var letter = /^[a-zA-ZÀ-ÿ ]+$/;
+        var letter = "^[a-zA-Z_ÀÁÂÃÈÉÊẾÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ" + "ẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểếỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ" + "ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s]+$";
         if(value.match(letter)){
             hideMess(spanID);
             return true;
